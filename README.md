@@ -8,14 +8,34 @@ To write a program to predict the profit of a city using the linear regression m
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
+1. Load and preprocess data:
 
-1.Import pandas, numpy and mathplotlib.pyplot.
- 
-2.Trace the best fit line and calculate the cost function.
+   * Load data using pandas.read_csv.
+Separate features (X) and target variable (y).
+Scale features and target variable using StandardScaler.
+Define the linear_regression function:
 
-3.Calculate the gradient descent and plot the graph for it.
+    * Add a column of ones to X for the intercept term.
+Initialize theta (model parameters) with zeros.
+Perform gradient descent loop:
 
-4.Predict the profit for two population sizes.
+2. Inside the loop:
+    * Calculate predictions using the dot product of X and theta.
+    * Calculate errors as the difference between predictions and actual y values.
+    * Update theta using the gradient descent formula with learning rate.
+3. Learn model parameters:
+
+    * Call the linear_regression function with scaled features and target variable.
+    * This function returns the learned theta (model parameters).
+4. Predict for new data point:
+
+5. Create a new data point.
+    * Scale the new data point using the fitted scaler.
+6. Make prediction:
+
+    * Calculate the prediction using the scaled new data point, appended with a 1 for the intercept, and the learned theta.
+    * Inverse scale the prediction to get the original scale value.
+7. Print the predicted value.
 
 ## Program:
 ```
